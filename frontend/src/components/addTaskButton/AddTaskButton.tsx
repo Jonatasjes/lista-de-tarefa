@@ -12,6 +12,7 @@ const AddTaskButton = (): JSX.Element => {
       ...context.state,
       showAddTask: true,
       isEditingTask: false,
+      newTaskValue: '',
     });
   }
 

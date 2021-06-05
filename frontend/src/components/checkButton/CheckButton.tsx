@@ -3,7 +3,6 @@ import React, { useContext } from 'react';
 import { BsCheckBox } from 'react-icons/bs';
 import MainContext from '../../store/MainContext';
 import { TCheckAddButton } from '../../types/types';
-import generatePassword from '../textTask/PasswordGenerator';
 import { CheckButtonButton } from './CheckButtonButton';
 
 const CheckButton = (props: TCheckAddButton): JSX.Element => {
@@ -16,16 +15,17 @@ const CheckButton = (props: TCheckAddButton): JSX.Element => {
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: generatePassword(), task: newTask }),
+      body: JSON.stringify({ message: newTask }),
     };
 
-    fetch('http://localhost:1992/tasks', requestOptions)
+    fetch('http://localhost:1992/api/v1/tasks/', requestOptions)
       .then(res => res.json())
       .then(() => {
         context.setState({
           ...context.state,
           showAddTask: false,
           quantTask: newQuant,
+          newTaskValue: '',
         });
       });
   }
@@ -35,18 +35,19 @@ const CheckButton = (props: TCheckAddButton): JSX.Element => {
     const id = props.id;
 
     const requestOptions = {
-      method: 'put',
+      method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ task: newTask }),
+      body: JSON.stringify({ message: newTask }),
     };
 
-    fetch('http://localhost:1992/tasks/' + id, requestOptions)
+    fetch('http://localhost:1992/api/v1/tasks/' + id, requestOptions)
       .then(res => res.json())
       .then(() => {
         context.setState({
           ...context.state,
           showAddTask: false,
           isEditingTask: false,
+          newTaskValue: '',
         });
       });
   }

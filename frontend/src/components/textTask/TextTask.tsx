@@ -6,6 +6,7 @@ import { TextTaskDiv } from './TextTaskDiv';
 const TextTask = (props: TTask): JSX.Element => {
   const context = useContext(MainContext);
   const isEditingTask = context.state.isEditingTask;
+  const newTaskValue = context.state.newTaskValue;
 
   function isEditing() {
     if (isEditingTask.isEditing && isEditingTask.id === props.id) {
@@ -23,11 +24,11 @@ const TextTask = (props: TTask): JSX.Element => {
 
   return (
     <TextTaskDiv>
-      {isEditing() ? (
-        <input onChange={evt => changeValue(evt.target.value)} />
-      ) : (
-        <input value={props.task} readOnly />
-      )}
+      <input
+        type="text"
+        value={isEditing() ? newTaskValue : props.message}
+        onChange={evt => changeValue(evt.target.value)}
+      />
     </TextTaskDiv>
   );
 };

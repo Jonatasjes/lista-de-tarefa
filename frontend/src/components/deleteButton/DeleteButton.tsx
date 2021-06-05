@@ -17,14 +17,14 @@ const DeleteButton = (props: TCheckDelButton): JSX.Element => {
 
     const newQuant = context.state.quantTask - 1;
 
-    fetch('http://localhost:1992/tasks/' + id, requestOptions)
-      .then(res => res.json())
-      .then(() => {
+    fetch('http://localhost:1992/api/v1/tasks/' + id, requestOptions).then(
+      () => {
         context.setState({
           ...context.state,
           quantTask: newQuant,
         });
-      });
+      },
+    );
   }
 
   function cancelEdit(): void {

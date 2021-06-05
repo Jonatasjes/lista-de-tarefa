@@ -9,7 +9,12 @@ dotenv.config({ path: './config.env' });
 
 const server = express();
 
-server.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+};
+server.use(cors(corsOptions));
+
 server.use(express.json());
 
 server.use(routes);
@@ -21,7 +26,11 @@ const port = process.env.PORT || 3333;
 const DB = process.env.DATABASE_LOCAL || 'mongodb://localhost:27017/todoList';
 
 mongoose
-  .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(DB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  })
   .then(() => console.log(`Connection established with ${DB}`));
 
 server.listen(port, () => {

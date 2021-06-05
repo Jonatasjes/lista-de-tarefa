@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const HomeSection = styled.section`
+  @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
   .table-head,
   .table-body {
     display: flex;

@@ -1,6 +1,11 @@
+export type TTaskBack = {
+  _id: string;
+  message: string;
+};
+
 export type TTask = {
   id: string;
-  task: string;
+  message: string;
 };
 
 export type TTaskId = {

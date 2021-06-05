@@ -42,7 +42,6 @@ export default class TaskControllers {
     };
 
     const task = await updateTaskService.execute(updateTask);
-
     return response.status(200).json(task);
   }
 

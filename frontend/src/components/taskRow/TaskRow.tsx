@@ -15,7 +15,7 @@ const TaskRow = (props: TTask): JSX.Element => {
 
   return (
     <TaskRowDiv className="table-row task-row">
-      <TextTask id={props.id} task={props.task}></TextTask>
+      <TextTask id={props.id} message={props.message}></TextTask>
       <div className="task-buttons">
         {isEditingTask.isEditing && isEditingTask.id === props.id ? (
           <CheckButton to="edit" id={props.id} />
@@ -23,7 +23,11 @@ const TaskRow = (props: TTask): JSX.Element => {
           <></>
         )}
 
-        {isEditingTask.id !== props.id ? <EditButton id={props.id} /> : <></>}
+        {isEditingTask.id !== props.id ? (
+          <EditButton id={props.id} message={props.message} />
+        ) : (
+          <></>
+        )}
         {isEditingTask.id === props.id ? (
           <DeleteButton to="cancel" id={props.id} />
         ) : (
