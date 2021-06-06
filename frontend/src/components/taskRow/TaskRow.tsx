@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import MainContext from '../../store/MainContext';
 import { TTask } from '../../types/types';
 
-import CheckButton from '../checkButton/CheckButton';
-import DeleteButton from '../deleteButton/DeleteButton';
-import EditButton from '../editButton/EditButton';
-import TextTask from '../textTask/TextTask';
+import CheckButton from '../buttons/checkButton/CheckButton';
+import DeleteButton from '../buttons/deleteButton/DeleteButton';
+import EditButton from '../buttons/editButton/EditButton';
+import TextTask from '../inputs/textTask/TextTask';
 import { TaskRowDiv } from './TaskRowDiv';
 
 const TaskRow = (props: TTask): JSX.Element => {

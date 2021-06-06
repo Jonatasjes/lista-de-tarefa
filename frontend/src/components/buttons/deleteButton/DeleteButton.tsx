@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
 import { AiOutlineDelete } from 'react-icons/ai';
-import MainContext from '../../store/MainContext';
-import { TCheckDelButton } from '../../types/types';
+import MainContext from '../../../store/MainContext';
+import { TCheckDelButton } from '../../../types/types';
 import { DeleteButtonButton } from './DeleteButtonButton';
 
 const DeleteButton = (props: TCheckDelButton): JSX.Element => {

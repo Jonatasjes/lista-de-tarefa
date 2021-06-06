@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { TUpdateTask } from 'src/entities/task/task';
+import { ITask, TUpdateTask } from 'src/entities/task/task';
 import CreateTaskService from 'src/usecases/tasks/CreateTaskService';
 import DeleteTaskService from 'src/usecases/tasks/DeleteTaskService';
 import GetAllTaskService from 'src/usecases/tasks/GetAllTaskService';
@@ -10,7 +10,18 @@ export default class TaskControllers {
   public async index(request: Request, response: Response): Promise<Response> {
     const getAllTaskService = new GetAllTaskService();
 
-    const tasks = await getAllTaskService.execute();
+    let tasks = await getAllTaskService.execute();
+
+    const searchTerm = request.query.search as string;
+
+    const findTasks: ITask[] = await tasks.filter(task => {
+      if (task.message.includes(searchTerm)) {
+        return task;
+      }
+    });
+    if (findTasks.length > 0 || searchTerm.length > 0) {
+      tasks = findTasks;
+    }
 
     return response.status(200).json(tasks);
   }
@@ -39,6 +50,7 @@ export default class TaskControllers {
     const updateTask: TUpdateTask = {
       id: request.params.id,
       message: request.body.message,
+      updatedAt: new Date(),
     };
 
     const task = await updateTaskService.execute(updateTask);

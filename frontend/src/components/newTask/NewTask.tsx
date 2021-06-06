@@ -1,7 +1,7 @@
 import React from 'react';
-import CheckButton from '../checkButton/CheckButton';
-import DeleteButton from '../deleteButton/DeleteButton';
-import InputTask from '../inputTask/InputTask';
+import CheckButton from '../buttons/checkButton/CheckButton';
+import DeleteButton from '../buttons/deleteButton/DeleteButton';
+import InputTask from '../inputs/inputTask/InputTask';
 import { NewTaskDiv } from './NewTaskDiv';
 
 const NewTask = (): JSX.Element => {

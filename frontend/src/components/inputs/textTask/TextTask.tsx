@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import MainContext from '../../store/MainContext';
-import { TTask } from '../../types/types';
+import MainContext from '../../../store/MainContext';
+import { TTask } from '../../../types/types';
 import { TextTaskDiv } from './TextTaskDiv';
 
 const TextTask = (props: TTask): JSX.Element => {

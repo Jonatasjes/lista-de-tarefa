@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
 import { BsCheckBox } from 'react-icons/bs';
-import MainContext from '../../store/MainContext';
-import { TCheckAddButton } from '../../types/types';
+import MainContext from '../../../store/MainContext';
+import { TCheckAddButton } from '../../../types/types';
 import { CheckButtonButton } from './CheckButtonButton';
 
 const CheckButton = (props: TCheckAddButton): JSX.Element => {

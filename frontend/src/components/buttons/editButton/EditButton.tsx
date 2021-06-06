@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
 import { FiEdit } from 'react-icons/fi';
-import MainContext from '../../store/MainContext';
-import { TTask, TTaskId } from '../../types/types';
+import MainContext from '../../../store/MainContext';
+import { TTask, TTaskId } from '../../../types/types';
 import { EditButtonButton } from './EditButtonButton';
 
 const EditButton = (props: TTask): JSX.Element => {

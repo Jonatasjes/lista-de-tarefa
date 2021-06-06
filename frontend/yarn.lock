@@ -303,6 +303,11 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
   integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
 
+"@types/query-string-params@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@types/query-string-params/-/query-string-params-1.7.0.tgz#6b5a3b46c6bd58b4aeebd1319e10e61a86d34084"
+  integrity sha512-be4vRHADhIOzcb++aHG9THz6lol5NXQH4s1oAVCLwp7JLzQPnGOln6CRGoDKU2ZuKb6j/BcZGJEfZXHujNvwRw==
+
 "@types/react@*", "@types/react@17.0.8":
   version "17.0.8"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.8.tgz#fe76e3ba0fbb5602704110fd1e3035cf394778e3"

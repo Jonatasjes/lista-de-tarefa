@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import MainContext from '../../store/MainContext';
+import MainContext from '../../../store/MainContext';
 import { InputTaskDiv } from './InputTaskDiv';
 
 const InputTask = (): JSX.Element => {

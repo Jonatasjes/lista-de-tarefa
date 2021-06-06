@@ -9,6 +9,7 @@ type data = {
   showAddTask: boolean;
   isEditingTask: TIsEditingTask;
   newTaskValue: string;
+  searchTerm: string;
   quantTask: number;
 };
 
@@ -24,6 +25,7 @@ export const data = {
     isEditing: false,
   },
   newTaskValue: '',
+  searchTerm: '',
   quantTask: 0,
 };
 

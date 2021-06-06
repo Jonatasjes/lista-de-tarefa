@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { AiOutlinePlusCircle } from 'react-icons/ai';
-import MainContext from '../../store/MainContext';
+import MainContext from '../../../store/MainContext';
 import { AddTaskButtonButton } from './AddTaskButtonButton';
 
 const AddTaskButton = (): JSX.Element => {
