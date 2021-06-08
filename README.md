@@ -1,6 +1,6 @@
 # Projeto Lista de Tarefas
 
-  - Um projeto feito unicamente para por a prova meus conhecimentos de front-end com React.js e backend com Node.js.
+  Projeto feito unicamente para por a prova meus conhecimentos de front-end com React.js e backend com Node.js.
 
 ## Projeto Lista de Tarefas
 
