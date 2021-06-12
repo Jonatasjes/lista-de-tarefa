@@ -1,15 +1,15 @@
 import { Router } from 'express';
 import TaskControllers from 'src/adapters/presentation/controllers/TaskControllers';
 
-const taskroutes = Router();
+const taskRoutes = Router();
 const taskControllers = new TaskControllers();
 
-taskroutes.route('/').get(taskControllers.index).post(taskControllers.create);
+taskRoutes.route('/').get(taskControllers.index).post(taskControllers.create);
 
-taskroutes
+taskRoutes
   .route('/:id')
   .get(taskControllers.show)
   .patch(taskControllers.update)
   .delete(taskControllers.delete);
 
-export default taskroutes;
+export default taskRoutes;

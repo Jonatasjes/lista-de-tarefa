@@ -1,8 +1,10 @@
 import { Router } from 'express';
-import taskroutes from './task-routes';
+import taskRoutes from './task-routes';
+import userRoutes from './user-routes';
 
 const routes = Router();
 
-routes.use('/api/v1/tasks', taskroutes);
+routes.use('/api/v1/tasks', taskRoutes);
+routes.use('/api/v1/users', userRoutes);
 
 export default routes;

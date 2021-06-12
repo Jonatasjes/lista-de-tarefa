@@ -1,4 +1,4 @@
-import { Document, Model, model, Schema } from 'mongoose';
+import mongoose, { Document, Model, Schema } from 'mongoose';
 
 export type TUpdateTask = {
   id: string;
@@ -27,6 +27,6 @@ export const TaskSchema: Schema = new Schema({
   },
 });
 
-const Task: Model<ITask> = model('Task', TaskSchema);
+const Task: Model<ITask> = mongoose.model('Task', TaskSchema);
 
 export default Task;

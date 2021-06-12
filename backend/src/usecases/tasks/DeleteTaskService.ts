@@ -1,12 +1,9 @@
-import Task from 'src/entities/task/task';
+import TasksRepository from 'src/external/repositories/mongodb/mongodb-task-repository';
 import AppError from 'src/main/errors/AppError';
 
 export default class DeleteTaskService {
   public async execute(id: string): Promise<void | AppError> {
-    try {
-      await Task.deleteOne({ _id: id });
-    } catch (err) {
-      return new AppError('Task not found to delete.', 404);
-    }
+    const tasksRepository = new TasksRepository();
+    await tasksRepository.delete(id);
   }
 }
