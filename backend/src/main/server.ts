@@ -1,9 +1,10 @@
-import express from 'express';
+import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import routes from './routes';
 import CustomError from './middleware/errors/CustomError';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import AppError from './errors/AppError';
 
 dotenv.config({ path: './config.env' });
 

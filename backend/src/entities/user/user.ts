@@ -11,6 +11,7 @@ export interface IUser extends Document {
 
 export interface IUserResponse {
   user: IUser;
+  token: string;
 }
 
 export interface IUserLogin {
@@ -35,7 +36,7 @@ export const UserSchema: Schema<IUser> = new Schema({
     type: String,
     required: [true, 'A user must have a password.'],
     minlength: 8,
-    select: false,
+    // select: false,
   },
   passwordConfirm: {
     type: String,
